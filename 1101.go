@@ -21,34 +21,34 @@ package main
 
 请注意，货物必须按照给定的顺序装运，因此使用载重能力为 14 的船舶并将包装分成 (2, 3, 4, 5), (1, 6, 7), (8), (9), (10) 是不允许的。 
 */
-func shipWithinDays(weights []int, days int) int {
-  l,r := 1, 25000000
-	for l < r {
-		m := (l + r) >> 1
-		if check(weights, days, m) {
-			r = m
-		} else {
-			l = m + 1
-		}
-	}
-	return l
-}
+// func shipWithinDays(weights []int, days int) int {
+//   l,r := 1, 25000000
+// 	for l < r {
+// 		m := (l + r) >> 1
+// 		if check(weights, days, m) {
+// 			r = m
+// 		} else {
+// 			l = m + 1
+// 		}
+// 	}
+// 	return l
+// }
 
-func check(weights []int, days int, m int) bool {
-	ans,sum := 1,0
-	for i := 0; i < len(weights); i++ {
-		if weights[i] > m {
-			return false
-		}
-		if sum + weights[i] > m {
-			sum = weights[i] 
-			ans++
-		} else {
-			sum += weights[i]
-		}
-		if ans > days {
-			return false
-		}
-	}
-	return true
-}
+// func check(weights []int, days int, m int) bool {
+// 	ans,sum := 1,0
+// 	for i := 0; i < len(weights); i++ {
+// 		if weights[i] > m {
+// 			return false
+// 		}
+// 		if sum + weights[i] > m {
+// 			sum = weights[i] 
+// 			ans++
+// 		} else {
+// 			sum += weights[i]
+// 		}
+// 		if ans > days {
+// 			return false
+// 		}
+// 	}
+// 	return true
+// }
