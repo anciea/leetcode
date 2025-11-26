@@ -1,7 +1,7 @@
 package main
 
 func minimumTime(time []int, totalTrips int) int64 {
-	l, r := 1, 1000000000
+	l, r := 1, int(1e9)
 	for l < r {
 		m := (l + r) >> 1
 		if check(time, totalTrips, m) {
