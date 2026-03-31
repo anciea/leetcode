@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git fetch:*)",
+      "Bash(git push:*)",
+      "Bash(git pull:*)",
+      "Bash(git config:*)"
+    ]
+  }
+}
