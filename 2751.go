@@ -31,7 +31,7 @@ func survivedRobotsHealths(positions []int, healths []int, directions string) []
 					healths[top] = 0
 				}
 			}
-			stack = append(stack, v)
+			// stack = append(stack, v)
 		}
 	}
 
