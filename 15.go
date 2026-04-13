@@ -41,6 +41,10 @@ func threeSum(nums []int) [][]int {
 }
 */
 
+/*
+时间复杂度 O(N)
+*/
+
 func threeSum(a []int) [][]int {
 	sort.Ints(a)
 	n := len(a)
