@@ -27,23 +27,19 @@ package main
 
 func lengthOfLIS(nums []int) (ans int) {
 	n := len(nums)
-	memo := make([]int, n)
-	
+	memo := make([]int, n) // nums[i]结尾最大LIS
+	ans := 0
+
 	for i := range n {
 		res := 0
-		p := &memo[i]
 		for j, x := range nums[:i] {
-			if x < nums[i] {
+			if nums[i] > x {
 				res = max(res, memo[j])
 			}
 		}
 		res++
-		*p = res
+		memo[i] = res
+		ans = max(ans, res)
 	}
-
-	for i := range n {
-		ans = max(ans, memo[i])
-	}
-
 	return ans
 }
